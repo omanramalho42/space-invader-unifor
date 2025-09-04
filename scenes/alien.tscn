@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci3k1l4tyfrhg"]
+
+[ext_resource type="Script" path="res://scenes/alien.gd" id="1_5mffn"]
+[ext_resource type="Texture2D" uid="uid://fn8pvcjsskjq" path="res://assets/Sprites/alien1.png" id="1_wqrvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7i6w"]
+size = Vector2(11, 8)
+
+[node name="alien" type="CharacterBody2D" groups=["aliens"]]
+script = ExtResource("1_5mffn")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wqrvo")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h7i6w")
+
+[node name="AnimationAlien" type="AnimationPlayer" parent="."]
+
+[node name="MovingTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="MovingTimer" to="." method="_on_moving_timer_timeout"]
