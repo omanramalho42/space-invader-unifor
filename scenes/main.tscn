@@ -1,42 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://boregsgatuh62"]
+[gd_scene load_steps=3 format=3 uid="uid://boregsgatuh62"]
 
 [ext_resource type="PackedScene" uid="uid://neahklk07aj0" path="res://scenes/player.tscn" id="1_quclk"]
-[ext_resource type="PackedScene" uid="uid://ci3k1l4tyfrhg" path="res://scenes/alien.tscn" id="2_aeaxb"]
-[ext_resource type="PackedScene" uid="uid://bo3qneh8unvgi" path="res://group_aliens.tscn" id="3_ffjkc"]
-[ext_resource type="Script" path="res://group_aliens.gd" id="4_8u164"]
-
-[sub_resource type="GDScript" id="GDScript_ojkb8"]
-script/source = "extends CharacterBody2D
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-"
+[ext_resource type="PackedScene" uid="uid://bo3qneh8unvgi" path="res://scenes/group_aliens.tscn" id="3_ffjkc"]
 
 [node name="main" type="Node"]
 
 [node name="player" parent="." instance=ExtResource("1_quclk")]
 
-[node name="alien" parent="." instance=ExtResource("2_aeaxb")]
-script = SubResource("GDScript_ojkb8")
-
 [node name="groupAliens" parent="." instance=ExtResource("3_ffjkc")]
-script = ExtResource("4_8u164")
