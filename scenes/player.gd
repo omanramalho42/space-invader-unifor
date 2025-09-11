@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @onready var ptoLaser = $LaserMarker
 @onready var timer_shoot = $ShootTimer
+@onready var animation_player = $AnimationPlayer
 
 const SPEED = 100.0
 
@@ -28,3 +29,7 @@ func _physics_process(delta) -> void:
 
 func _on_shoot_timer_timeout() -> void:
 	can_shoot = true
+	
+func destroy():
+	animation_player.play("destroyed")
+	print("damage")
