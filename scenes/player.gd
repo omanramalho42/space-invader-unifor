@@ -33,3 +33,8 @@ func _on_shoot_timer_timeout() -> void:
 func destroy():
 	animation_player.play("destroyed")
 	print("damage")
+	
+func eliminated():
+	if !self.is_queued_for_deletion():
+		get_parent().remove_child(self)
+		queue_free()

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://boregsgatuh62"]
+[gd_scene load_steps=6 format=3 uid="uid://boregsgatuh62"]
 
 [ext_resource type="PackedScene" uid="uid://neahklk07aj0" path="res://scenes/player.tscn" id="1_quclk"]
 [ext_resource type="PackedScene" uid="uid://bo3qneh8unvgi" path="res://scenes/group_aliens.tscn" id="3_ffjkc"]
 [ext_resource type="FontFile" uid="uid://bx7ggn1m66ogi" path="res://assets/fonts/atari-classic-font/AtariClassicChunky-PxXP.ttf" id="3_pxp2s"]
+[ext_resource type="PackedScene" uid="uid://bv28586dcevhl" path="res://scenes/block.tscn" id="4_ne4ie"]
+[ext_resource type="Script" path="res://scenes/floor.gd" id="5_j8kov"]
 
 [node name="main" type="Node"]
 
@@ -30,3 +32,159 @@ theme_override_fonts/font = ExtResource("3_pxp2s")
 theme_override_font_sizes/font_size = 10
 text = "0"
 horizontal_alignment = 1
+
+[node name="bases" type="Node2D" parent="."]
+position = Vector2(93, 213)
+
+[node name="base2" type="Node2D" parent="bases"]
+position = Vector2(51, -6)
+
+[node name="block3" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-115, -3)
+
+[node name="block7" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-99, -3)
+
+[node name="block8" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-115, 1)
+
+[node name="block9" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-103, -7)
+
+[node name="block10" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-111, -7)
+
+[node name="block11" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-107, -7)
+
+[node name="block12" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-103, -3)
+
+[node name="block14" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-111, -3)
+
+[node name="block15" parent="bases/base2" instance=ExtResource("4_ne4ie")]
+position = Vector2(-99, 1)
+
+[node name="base3" type="Node2D" parent="bases"]
+position = Vector2(33, -7)
+
+[node name="block3" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-54, -2)
+
+[node name="block7" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-38, -2)
+
+[node name="block8" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-54, 2)
+
+[node name="block9" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-42, -6)
+
+[node name="block10" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-50, -6)
+
+[node name="block11" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-46, -6)
+
+[node name="block12" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-42, -2)
+
+[node name="block14" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-50, -2)
+
+[node name="block15" parent="bases/base3" instance=ExtResource("4_ne4ie")]
+position = Vector2(-38, 2)
+
+[node name="base4" type="Node2D" parent="bases"]
+position = Vector2(48, -7)
+
+[node name="block3" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-23, -2)
+
+[node name="block7" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-7, -2)
+
+[node name="block8" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-23, 2)
+
+[node name="block9" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-11, -6)
+
+[node name="block10" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-19, -6)
+
+[node name="block11" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-15, -6)
+
+[node name="block12" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-11, -2)
+
+[node name="block14" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-19, -2)
+
+[node name="block15" parent="bases/base4" instance=ExtResource("4_ne4ie")]
+position = Vector2(-7, 2)
+
+[node name="base5" type="Node2D" parent="bases"]
+position = Vector2(74, -7)
+
+[node name="block3" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(5, -2)
+
+[node name="block7" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(21, -2)
+
+[node name="block8" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(5, 2)
+
+[node name="block9" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(17, -6)
+
+[node name="block10" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(9, -6)
+
+[node name="block11" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(13, -6)
+
+[node name="block12" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(17, -2)
+
+[node name="block14" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(9, -2)
+
+[node name="block15" parent="bases/base5" instance=ExtResource("4_ne4ie")]
+position = Vector2(21, 2)
+
+[node name="base6" type="Node2D" parent="bases"]
+position = Vector2(42, -7)
+
+[node name="block3" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(82, -1)
+
+[node name="block7" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(98, -1)
+
+[node name="block8" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(82, 3)
+
+[node name="block9" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(94, -5)
+
+[node name="block10" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(86, -5)
+
+[node name="block11" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(90, -5)
+
+[node name="block12" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(94, -1)
+
+[node name="block14" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(86, -1)
+
+[node name="block15" parent="bases/base6" instance=ExtResource("4_ne4ie")]
+position = Vector2(98, 3)
+
+[node name="floor" type="Node" parent="."]
+script = ExtResource("5_j8kov")

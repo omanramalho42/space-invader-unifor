@@ -11,7 +11,7 @@ func _ready() -> void:
 		aliens_list.append([])
 		for i in range(8):
 			var alien = Alien.instantiate()
-			alien.global_position = Vector2(50+20*i, 40+20*j)
+			alien.global_position = Vector2(55 + 20 * i, 40 + 20 * j)
 			self.add_child(alien)
 			aliens_list[j].append(alien)
 			alien.connect("dead_alien", Callable(self, "eliminate_alien"))

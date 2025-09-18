@@ -13,3 +13,8 @@ func _on_body_entered(body: Node2D) -> void:
 		body.explosion()
 		get_parent().remove_child(self)
 		queue_free()
+	elif body.is_in_group("blocks"):
+		body.destroy()
+		if !is_queued_for_deletion():
+			get_parent().remove_child(self)
+			queue_free()
