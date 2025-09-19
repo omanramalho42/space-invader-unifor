@@ -1,14 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://bv28586dcevhl"]
 
-[ext_resource type="Script" path="res://scenes/block.gd" id="1_jydfs"]
+[ext_resource type="Script" uid="uid://bhh0sku2rfc1v" path="res://scenes/block.gd" id="1_jydfs"]
 [ext_resource type="Texture2D" uid="uid://c6ox4i00t0iks" path="res://assets/Sprites/bloque.png" id="1_y3q57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ay6gi"]
 size = Vector2(4, 4)
 
-[sub_resource type="Animation" id="Animation_htocj"]
-resource_name = "normal"
-length = 0.5
+[sub_resource type="Animation" id="Animation_xnd3q"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,8 +37,9 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_xnd3q"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_htocj"]
+resource_name = "normal"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,9 +55,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ihuv2"]
 _data = {
-"RESET": SubResource("Animation_xnd3q"),
-"danified": SubResource("Animation_75ndf"),
-"normal": SubResource("Animation_htocj")
+&"RESET": SubResource("Animation_xnd3q"),
+&"danified": SubResource("Animation_75ndf"),
+&"normal": SubResource("Animation_htocj")
 }
 
 [node name="block" type="StaticBody2D" groups=["blocks"]]
@@ -72,5 +72,5 @@ shape = SubResource("RectangleShape2D_ay6gi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ihuv2")
+&"": SubResource("AnimationLibrary_ihuv2")
 }

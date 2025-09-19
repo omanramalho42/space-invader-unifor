@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://datbi7d06vcqn"]
+
+[ext_resource type="Script" uid="uid://c12mjeujl8h4y" path="res://scenes/bonus.gd" id="1_piybw"]
+[ext_resource type="Texture2D" uid="uid://c1m68rqnrt7dy" path="res://assets/Sprites/bonus.png" id="2_y4odb"]
+[ext_resource type="AudioStream" uid="uid://bs6gsbaeib73j" path="res://assets/sfx/explosion.wav" id="3_y4odb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_monau"]
+size = Vector2(16, 7)
+
+[sub_resource type="Animation" id="Animation_h0d21"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_k1xfh"]
+resource_name = "destroyed"
+length = 0.8
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_hfuap"]
+resource_name = "normal"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ik1mb"]
+_data = {
+&"RESET": SubResource("Animation_h0d21"),
+&"destroyed": SubResource("Animation_k1xfh"),
+&"normal": SubResource("Animation_hfuap")
+}
+
+[node name="bonus" type="CharacterBody2D" groups=["aliens"]]
+script = ExtResource("1_piybw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(19, 13.5)
+texture = ExtResource("2_y4odb")
+hframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19, 13.5)
+shape = SubResource("RectangleShape2D_monau")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ik1mb")
+}
+autoplay = "normal"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y4odb")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -8,7 +8,6 @@ func _ready():
 	comprovate_damage()
 
 func destroy():
-	print("destruir block")
 	golpes += 1
 	comprovate_damage()
 	

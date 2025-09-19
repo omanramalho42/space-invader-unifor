@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c5kgsy4nrljrm"
-path="res://.godot/imported/AtariClassic-gry3.ttf-7dc9ded08fee2156272fe040c7b47cd4.fontdata"
+uid="uid://ch103gi2tob72"
+path="res://.godot/imported/andina.ttf-b3885bd1ce64e33c599352e4da4e1f49.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/atari-classic-font/AtariClassic-gry3.ttf"
-dest_files=["res://.godot/imported/AtariClassic-gry3.ttf-7dc9ded08fee2156272fe040c7b47cd4.fontdata"]
+source_file="res://assets/fonts/andina.ttf"
+dest_files=["res://.godot/imported/andina.ttf-b3885bd1ce64e33c599352e4da4e1f49.fontdata"]
 
 [params]
 

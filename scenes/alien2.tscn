@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ci3k1l4tyfrhg"]
+[gd_scene load_steps=9 format=3 uid="uid://bj685ovcakwgf"]
 
-[ext_resource type="Script" uid="uid://bna8id1qu8qm0" path="res://scenes/alien.gd" id="1_5mffn"]
-[ext_resource type="Texture2D" uid="uid://fn8pvcjsskjq" path="res://assets/Sprites/alien1.png" id="1_wqrvo"]
-[ext_resource type="AudioStream" uid="uid://bs6gsbaeib73j" path="res://assets/sfx/explosion.wav" id="3_3vbw7"]
+[ext_resource type="Script" uid="uid://bna8id1qu8qm0" path="res://scenes/alien.gd" id="1_2dkue"]
+[ext_resource type="Texture2D" uid="uid://m4ub6oll4ikv" path="res://assets/Invaders/Invader3-1.png" id="2_2dkue"]
+[ext_resource type="AudioStream" uid="uid://bs6gsbaeib73j" path="res://assets/sfx/explosion.wav" id="3_s7230"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7i6w"]
 size = Vector2(11, 8)
@@ -17,7 +17,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.76666665),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -75,13 +75,13 @@ _data = {
 &"destroy": SubResource("Animation_syy4b")
 }
 
-[node name="alien" type="CharacterBody2D" groups=["aliens"]]
-script = ExtResource("1_5mffn")
+[node name="alien2" type="CharacterBody2D" groups=["aliens"]]
+script = ExtResource("1_2dkue")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wqrvo")
-hframes = 3
+texture_filter = 1
+texture = ExtResource("2_2dkue")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_h7i6w")
@@ -92,12 +92,12 @@ libraries = {
 }
 autoplay = "AnimatonAlien"
 
-[node name="MovingTimer" type="Timer" parent="."]
-wait_time = 0.5
+[node name="MovingTimer" type="Timer" parent="." groups=["aliens"]]
+wait_time = 0.3
 
 [node name="spawnPoint" type="Marker2D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_3vbw7")
+stream = ExtResource("3_s7230")
 
 [connection signal="timeout" from="MovingTimer" to="." method="_on_moving_timer_timeout"]

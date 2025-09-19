@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ox4i00t0iks"
-path="res://.godot/imported/bloque.png-20be9e058615798552fb5c879d992d39.ctex"
+uid="uid://bfg1tahjcdwb4"
+path="res://.godot/imported/Invader3-2.png-fb01d85b341e7146f99b34a9dd00a560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/bloque.png"
-dest_files=["res://.godot/imported/bloque.png-20be9e058615798552fb5c879d992d39.ctex"]
+source_file="res://assets/Invaders/Invader3-2.png"
+dest_files=["res://.godot/imported/Invader3-2.png-fb01d85b341e7146f99b34a9dd00a560.ctex"]
 
 [params]
 
